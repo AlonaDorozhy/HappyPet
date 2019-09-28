@@ -1,5 +1,5 @@
 .ui .message {
-  background: white url(top3.jpg);
+  background: white url(img/main.jpg);
   background-repeat: no-repeat;
   background-position: right top;
 }
@@ -234,3 +234,68 @@ i.icon.search:before {
   text-align: initial;
   line-height: 2;
 }
+
+.prodType {
+  font-size: 18px;
+  font-style: oblique;
+  text-transform: capitalize;
+}
+
+.prodInfo {
+  font-size: 18px;
+  padding: 0;
+  font-style: oblique;
+  text-transform: capitalize;
+}
+
+.prodPrice {
+  font-size: 18px;
+  padding: 0;
+  font-style: oblique;
+  text-transform: capitalize;
+  color: #052b1f;
+}
+
+.detProdType {
+  text-transform: uppercase;
+}
+
+.attention {
+  color: firebrick;
+}
+
+.infoDetails p {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  font-style: oblique;
+  text-transform: lowercase;
+  color: #052b1f;
+}
+
+.prodHeader {
+  font-size: 22px;
+  font-weight: 600;
+  font-style: oblique;
+  text-transform: unset;
+  color: darkslategray !important;
+}
+
+.detProdTypeHead {
+  font-size: 26px !important;
+  font-style: oblique;
+  text-transform: capitalize;
+  color: darkslategray !important;
+}
+
+.infoDetails>h3 {
+  font-weight: 600;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  color: rgb(10, 48, 48) !important;
+}
+
+/* ggggggggggggggggggggggggggggggggggggggggggggg */
+
