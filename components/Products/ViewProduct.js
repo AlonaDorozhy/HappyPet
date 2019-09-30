@@ -3,12 +3,12 @@ export class viewProduct {
     this.controller = contr;
     this.storage = this.controller.storage;
     this.productListDOM = document.querySelector('.productList');
- 
+
   }
 
   buildProductList(prodArr) {
     this.productListDOM.innerHTML = "";
-   
+
     prodArr.forEach(pets => {
       $(function () {
         $(`#item${pets.id}`).click(function () {
@@ -17,17 +17,12 @@ export class viewProduct {
         $(`.item${pets.id}`).modal({
           closable: true
         });
-      });
-   
-
- 
+      });   
 
 
       this.productListDOM.innerHTML += `
           <div class="column">
-   
-
-              <div class="ui card">
+              <div class="ui special card">
                 <div class="image">
                   <img src="${pets.url}">
                 </div>
@@ -86,9 +81,8 @@ export class viewProduct {
                   </div>
                   <div class="ui btnAdd button"><i class="cart arrow down icon"></i> Add to cart </div>
                 </div>
-              </div>
             </div> `
     });
 
-}
+  }
 }

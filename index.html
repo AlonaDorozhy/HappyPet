@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Shop</title>
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
     type="text/css" />
+    <script src="semantic/dist/semantic.min.js"></script>
   <link rel="stylesheet" href="main.css">
   <style type="text/css">
   </style>
@@ -21,18 +25,18 @@
         <div class="ui container">
           <div class="right menu">
             <div class="item">
-              <div class="ui small input"><i class="search icon"></i><input placeholder></div>
+              <div class="ui small input"><i class="search icon"></i><input  class="searchInput" placeholder="search by bread "></div>
             </div>
-            <a class="item"><i class="cart arrow down icon"></i>Cart</a>
+            <a id="cartOrder" class="item "><i class="cart arrow down icon"></i>Cart</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  
   <div class="ui padded grid">
     <div class="three wide tablet only three wide computer only column" id="sidebar">
-
+  
       <div class="ui vertical borderless fluid text menu">
         <a class="active item">All pets</a>
         <a class="item">Cats</a>
@@ -41,13 +45,13 @@
         <a class="item">Fishes</a>
         <a class="item">One <i class="expand arrows alternate"></i><i class="expand arrows alternate icon"></i>more
           nav</a> <a class="item">Another nav item</a>
-
+  
       </div>
     </div>
     <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer right floated column" id="content">
       <div class="ui padded grid">
         <div class="row">
-
+  
           <div class="ui message">
             <h1 class="ui huge header">We are the Best Pet Store!</h1>
             <p class="lead">
@@ -56,15 +60,18 @@
               sidebar coming in and out of the page, and try to change the
               viewport size to see right sidebar toggle button. You could
               check out more wonderful effects here.<br>
-
+  
             </p>
             <div class="qualityAword"><a target="_blank" href="#">Award Best Pet Shop of the Year! <img
                   class=" qualityImg" src="img/quality.png">
               </a></div>
           </div>
-          <!-- <div class="three column row">
-            <div class=" productList" ></div>
-            </div> -->
+          <div class=" InfoCart">
+            
+              </div>
+          <div class="ui modal  cartInf">
+            
+              </div>
           <div class="ui grid">
             <div class="row">
               <h1 class="ui huge dividing header">All pets.</h1>
@@ -72,14 +79,14 @@
             <div class="three column row  productList">
               <div class="column ">
                 <div class="productList">
-
+  
                 </div>
               </div>
             </div>
-
-       
-            
-
+  
+  
+  
+  
           </div>
           <footer>&copy; Happy Pet loves you</footer>
         </div>
