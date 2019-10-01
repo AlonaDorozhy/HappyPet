@@ -1,29 +1,20 @@
-import { ControllerProduct } from '../Product/ControllerProduct.js';
-import { ControllerFilter } from '../Filter/ControllerFilter.js';
-import { ControllerSort } from '../Sort/ControllerSort.js';
+import { controllerProduct } from '../Products/ControllerProduct.js';
+import { controllerSearch } from '../Search/ControllerSearch.js';
+import { controllerCart} from '../Cart/ControllerCart.js';
 
 
-class MainController {
+export class MainController {
   constructor() {
-    if (!!MainController.instance) {
-        return MainController.instance;
-    }
-    MainController.instance = this;
 
-    this.product = new ControllerProduct(this);
-    this.filter = new ControllerFilter(this);
-    this.sort = new ControllerSort(this);
+    this.product = new controllerProduct(this);
+    this.search = new controllerSearch(this);
+    this.cart = new controllerCart(this);
 
-    this.buildProducts();
+
 
     return this;
-  }
-
-  buildProducts() {
-    let prodArr = this.filter.filterProductList();
-    this.sort.sortProductList(prodArr);
-    this.product.buildProductList(prodArr);
-  }
+  
 }
 
-export { MainController };
+}
+  

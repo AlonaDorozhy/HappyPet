@@ -22,7 +22,7 @@ export class modelSearch {
       let type = prodObj.type
       let prod = prodObj.name
       console.log(type, prod);
-      return prodObj.name.toLowerCase().indexOf(name) !== -1
+      return (prodObj.name.toLowerCase().indexOf(name) !== -1|| prodObj.type.toLowerCase().indexOf(name) !== -1)
     })
   }
 }
