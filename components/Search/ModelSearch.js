@@ -1,20 +1,20 @@
 export class modelSearch {
-  constructor(contr) {
-    this.controller = contr;
+  constructor(controller) {
+    this.controller = controller;
     this.storage = this.controller.storage;
   }
 
   beginFilterProcess() {
     let prodArr = this.storage.arrAllProds.slice();
-
     if (this.storage.searchByNameStatus === true) {
       prodArr = this.startFilterByName(prodArr);
     } 
-    console.log(prodArr);
+
     this.controller.buildProductList(prodArr);
   }
 
   startFilterByName(prodArr) {
+    console.log(prodArr);
     const name = this.controller.getSearchValue();
     console.log(name);
     return prodArr.filter((prodObj) => {

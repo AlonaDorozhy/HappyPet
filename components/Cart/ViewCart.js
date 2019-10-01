@@ -1,22 +1,21 @@
 export default class viewCart {
-  constructor(contr) {
-    this.controller = contr;
-    this.storage = this.controller.storage;
-    this.OrderCartDOM = document.querySelector('.InfoCart');
-    this.OrderClick = document.getElementById('cartOrder');
-    this.OrderClick.addEventListener('click', () => this.buildOrderCart());
-    this.storage = this.controller.storage;
-  }
+   constructor(contr) {
+      this.controller = contr;
+      this.storage = this.controller.storage;
+      this.OrderCartDOM = document.querySelector('.ui.modal.cartInf');
+
+      this.OrderClick = document.getElementById('cartOrder');
+      this.OrderClick.addEventListener('click', () => this.buildOrderCart());
+      this.storage = this.controller.storage;
+   }
 
 
 
 
-  buildOrderCart() {
-    this.OrderCartDOM.innerHTML = ""
-    console.log("click");
+   buildOrderCart() {
 
-    this.OrderCartDOM.innerHTML += `
-         <div class="ui modal cartInf show ">
+      this.OrderCartDOM.innerHTML += `
+      
 <form class="ui form">
    <h4 class="ui dividing header">Информация о доставке</h4>
    <div class="field">
@@ -113,8 +112,8 @@ export default class viewCart {
 
      <div class="ui btnAdd button successBtn"><i class="cart arrow down icon"></i>Подтвердить заказ </div>
 </form>
-</div>`
-  }
+`
+   }
 }
 
 

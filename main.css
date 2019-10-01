@@ -390,3 +390,46 @@ i.icon.search:before {
   font-size: 18px;
 }
 
+.ui.labeled.icon.button, .ui.labeled.icon.buttons {
+  position: relative;
+  /* padding-left: 4.07142857em!important;
+  padding-right: 1.5em!important; */
+  background-color: #3b6391;
+  color: white;
+  widows: 50% !important;
+  /* padding-left: 55%; */
+  margin-left: 30%;
+}
+
+.ui.floating.dropdown>.menu {
+  background-color: #4c7aaf;
+}
+
+.ui.label {
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
+  margin: 0 .14285714em;
+  background-color: rgba(9, 9, 66, 0.034);
+  background-image: none;
+  padding: 2px;
+  ;
+  color: rgba(0, 0, 0, .6);
+  text-transform: none;
+  font-weight: 700;
+  border: 0 solid transparent;
+  border-radius: .28571429rem;
+}
+
+.ui.label>.icon {
+  width: auto;
+  margin: 0 0 0 0;
+  padding: 2px;
+  font-size: 22px;
+  color: white;
+}
+
+.innerText {
+  color: white;
+  font-size: 16px;
+}

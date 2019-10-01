@@ -1,5 +1,5 @@
-import {modelCategory} from './ModelCategory.js'
-import {viewCategory} from './ViewCategory.js'
+import {modelCategory} from './ModelCategory.js.js'
+import {viewCategory} from './ViewCategory.js.js'
 
 
 

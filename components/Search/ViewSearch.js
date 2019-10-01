@@ -1,6 +1,6 @@
 class viewSearch {
-  constructor(contr) {
-    this.controller = contr;
+  constructor(controller) {
+    this.controller = controller;
     this.storage = this.controller.storage;
 
     this.searchInputDOM = document.querySelector('.searchInput');

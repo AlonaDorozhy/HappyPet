@@ -1,49 +1,49 @@
 // $(function () {
-//   $("#test").click(function () {
-//     $(".test").modal('show');
-//   });
-//   $(".test").modal({
-//     closable: true
-//   });
-// });
-// console.log("hi");
-// $(function () {
-//   $("#test1").click(function () {
-//     $(".test1").modal('show');
-//   });
-//   $(".test1").modal({
-//     closable: true
-//   });
-// });
-// console.log("hi");
-// $(function () {
-//   $("#test2").click(function () {
-//     $(".test2").modal('show');
-//   });
-//   $(".test2").modal({
-//     closable: true
-//   });
-// });
-// console.log("hi");
-// $(function () {
-//   $("#test3").click(function () {
-//     $(".test3").modal('show');
-//   });
-//   $(".test2").modal({
-//     closable: true
-//   });
-// });
+//         $(`#cartOrder`).click(function () {
+//           console.log("click");
+//           $(`.cartInf`).modal('show');
+//         });
+//         $(`.cartInf`).modal({
+//           closable: true
+//         });
+//       });
 
-$(function () {
-  $(`#cartOrder`).click(function () {
-    console.log("click");
-    $(`.cartInf`).modal('show');
+
+$(document).ready(function () {
+  // hide and open menu on small screen
+  $(".ui.toggle.button").click(function () {
+    $(".mobile.only.grid .ui.vertical.menu").toggle(100);
   });
-  $(`.cartInf`).modal({
-    closable: true
-  });
+
+  // toggle right sidebar
+  $(".ui.sidebar")
+    .sidebar({
+      context: $(".pushable"),
+      animation: "slide along",
+      dimPage: false
+    })
+    .sidebar("attach events", ".ui.top.attached.blue.button");
 });
+
 $('.ui .item').on('click', function () {
   $('.ui .item').removeClass('active');
   $(this).addClass('active');
 }); 
+$('.ui.dropdown')
+  .dropdown()
+  ;
+$(document).ready(function () {
+  // hide and open menu on small screen
+  $(".ui.toggle.button").click(function () {
+    $(".mobile.only.grid .ui.vertical.menu").toggle(100);
+  });
+
+  // toggle right sidebar
+  $(".ui.sidebar")
+    .sidebar({
+      context: $(".pushable"),
+      animation: "slide along",
+      dimPage: false
+    })
+    .sidebar("attach events", ".ui.top.attached.blue.button");
+});

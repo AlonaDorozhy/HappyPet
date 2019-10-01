@@ -13,12 +13,10 @@ export  class controllerCart {
   buildOrderCart() {
     this.model.getOrderCart().then((dd) => {
       this.storage.arrAllProds = dd;
-      // this.buildOrderList(dd);
+     
     });
   }
 
-  // buildOrderList(prodArr) {
-  //   this.view.buildOrderList(prodArr);
-  // }
+
 
 }
