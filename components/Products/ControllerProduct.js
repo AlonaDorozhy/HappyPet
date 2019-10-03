@@ -8,7 +8,7 @@ class controllerProduct {
     this.model = new modelProduct(this);
     this.view = new viewProduct(this);
     this.Template = new Template(this);
-    console.log(this.Template);
+    // console.log(this.Template);
     this.buildAllProducts();
   }
 

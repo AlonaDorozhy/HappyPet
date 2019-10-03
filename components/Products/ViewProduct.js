@@ -3,7 +3,7 @@ export class viewProduct {
     this.controller = contr;
     this.storage = this.controller.storage;
     this.productListDOM = document.querySelector('.productList');
-
+    
   }
 
   buildProductList(prodArr) {
@@ -17,12 +17,12 @@ export class viewProduct {
         $(`.item${pets.id}`).modal({
           closable: true
         });
-      });   
+      });
 
 
       this.productListDOM.innerHTML += `
           <div class="column">
-              <div class="ui special card">
+              <div   class="ui special card">
                 <div class="image">
                   <img src="${pets.url}">
                 </div>
@@ -73,13 +73,13 @@ export class viewProduct {
                       <div class="ui black deny button">
                         Back
                       </div>
-                      <div class="ui positive right labeled icon button">
+                      <div name="${ pets.id }" id="${pets.id}innerBtn"  class="ui positive right labeled icon button btnAdd">
                         Add to cart
                         <i class="checkmark icon"></i>
                       </div>
                     </div>
                   </div>
-                  <div class="ui btnAdd button"><i class="cart arrow down icon"></i> Add to cart </div>
+                  <div name="${ pets.id}" id="${pets.id}" class="ui btnAdd button"><i class="cart arrow down icon"></i> Add to cart </div>
                 </div>
             </div> `
     });

@@ -4,20 +4,74 @@ export default class viewCart {
       this.storage = this.controller.storage;
       this.OrderCartDOM = document.querySelector('.ui.modal.cartInf');
 
-      this.OrderClick = document.getElementById('cartOrder');
-      this.OrderClick.addEventListener('click', () => this.buildOrderCart());
+      this.CartClick = document.getElementById('cartOrder');
+      this.AddProduct = document.querySelector('.btnAdd')
+      // console.log(this.AddProduct.);
+      // this.AddProduct.addEventListener('click', () => this.getItemInfo());
+      this.OrderCartDOM.innerHTML = ""
+      this.CartClick.addEventListener('click', () => this.buildOrderCart());
       this.storage = this.controller.storage;
    }
 
+   buildProductCart(data, current){
+console.log(data);
+console.log(current);
+   }
 
+   buildOrderCart(prodArr) {
+      // console.log(prodArr);
+      $(document).ready(function () {
+         $('.demo.menu .item').tab({ history: false });
+      });
 
-
-   buildOrderCart() {
-
+    
+      this.OrderCartDOM.innerHTML = ''
       this.OrderCartDOM.innerHTML += `
       
 <form class="ui form">
-   <h4 class="ui dividing header">Информация о доставке</h4>
+<div class="ui pointing secondary demo menu">
+
+    <a class="active red item" data-tab="first">Shopping cart</a>
+    <a class="blue item" data-tab="second">Order form</a>
+    <a class="green item" data-tab="third">History of orders</a>
+</div>
+
+<div class="ui active tab segment" data-tab="first">
+ <h4 class="ui dividing header"> List of orders</h4>
+   <div class="ui card" style="max-width: 100%; min-width: 100%;">
+    <div class="content" style="padding: 0;">
+        <div class="ui items">
+            <div class="item">
+                <div class="ui medium image">
+                    <img src="https://semantic-ui.com/images/wireframe/image.png">
+                </div>
+                <div class="content" style="padding: 1rem;">
+                    <a class="header">12 Years a Slave</a>
+                    <div class="meta">
+                        <span class="cinema">Union Square 14</span>
+                    </div>
+                    <div class="description">
+                        <p></p>
+                    </div>
+                    <div class="extra">
+                        <div class="ui label">IMAX</div>
+                        <div class="ui label"><i class="globe icon"></i> Additional Languages</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="extra content">
+        <a>
+            More Info
+        </a>
+    </div>
+</div>
+</div>
+<div class="ui tab segment" data-tab="second">
+<div class="row">
+   <h4 class="ui dividing header">Person Info</h4>
+
    <div class="field">
       <label>Name</label>
       <div class="two fields">
@@ -29,6 +83,7 @@ export default class viewCart {
          </div>
       </div>
    </div>
+   
    <div class="field">
       <label>Adress</label>
       <div class="fields">
@@ -53,11 +108,9 @@ export default class viewCart {
          </div>
       </div>
    </div>
-   
+
    <h4 class="ui dividing header">Billing Information</h4>
-   <div class="field">
-    
-   </div>
+ 
    <div class="fields">
       <div class="seven wide field">
          <label>Номер карты</label>
@@ -66,9 +119,12 @@ export default class viewCart {
       <div class="six wide field">
         <label>Card Type</label>
          <select  class="ui fluid dropdown">
-            <option class="item" data-value="visa"><i class="visa icon"></i> Visa </option>
-            <option class="item" data-value="amex"><i class="amex icon"></i> American Express </option>
-            <option class="item" data-value="discover"><i class="discover icon"></i> Открытие </option>
+            <option class="item" data-value="visa">
+                <i class="visa icon"></i> Visa </option>
+            <option class="item" data-value="amex">
+                <i class="amex icon"></i> American Express </option>
+            <option class="item" data-value="discover">
+                <i class="discover icon"></i> Открытие </option>
          </select>
       </div>
 
@@ -98,20 +154,37 @@ export default class viewCart {
                   <option value="12">December</option>
                </select>
             </div>
+        </div>
             <div class="field">
                <input type="text"  maxlength="4" placeholder="Year">
             </div>
          </div>
       </div>
    </div>
+   
    <h4 class="ui dividing header">Квитанция</h4>
-   <div class="field six wide">
+   <div class="fields">
+    <div class="field six wide">
       <label>Отправить квитанцию :</label>
-    <input type="text" name="phone" placeholder=" Phone Number">
+      <input type="text" name="phone" placeholder=" Phone Number">
    </div>
+   
+      <div class="ui btnAdd button successBtn">
+          <i class="cart arrow down icon"></i>Confirm the order
+        </div>
+    </div>
+ </div>
 
-     <div class="ui btnAdd button successBtn"><i class="cart arrow down icon"></i>Подтвердить заказ </div>
+  
+<div class="ui  tab segment" data-tab="third">
+
+<div class="row">
+
+   <h4 class="ui dividing header">History</h4></div>
+</div>
+
 </form>
+
 `
    }
 }
