@@ -7,7 +7,7 @@ export default class modelCart {
 
    this.btn = []
    this.btnItch 
-  
+    // this.controller.buildProductCart(prodArr);
     
   }
 
@@ -18,14 +18,14 @@ export default class modelCart {
     }
 
     this.controller.buildProductList(prodArr);
+    this.controller.buildProductCart(prodArr);
   }
 
   getIchBtn(data) {
     data.forEach(pets => {
       this.btnItch = document.getElementById(pets.id);
-      console.log(this.btnItch);
-      // this.btnItch.addEventListener('click', () => this.btnProduct(data, pets.id)) 
-      // this.btnItch.addEventListener('click', () => this.buildProductCart(data, pets.id)) 
+  
+      this.btnItch.addEventListener('click', () => this.btnProduct(data, pets.id)) 
 
     });
 
@@ -34,10 +34,12 @@ export default class modelCart {
   //   this.view.buildProductCart(prodArr);
   // }
   btnProduct(data, current){
-console.log('Text');
-console.log(current);
+    this.controller.buildProductCart(data, current);
+    // this.view.buildProductCart(data, current)
+// console.log('Text');
+// console.log(current);
 
-console.log(data);
+// console.log(data);
 }
 
 getAnimals() {
@@ -51,7 +53,6 @@ getAnimals() {
       this.data = this.animalFactory.createData(json);
       localStorage.setItem("data", JSON.stringify(this.data));
       this.data = json;
-      // console.log(this.data);
     this.getIchBtn(this.data) 
       return this.data;
     });
@@ -63,7 +64,7 @@ export class AnimalFactory {
   createData(array) {
 
     let data = array.map(el => {
-      // console.log(el.type)
+    
       if (el.type === "cat") {
         localStorage.setItem("cat", JSON.stringify(el));
       }

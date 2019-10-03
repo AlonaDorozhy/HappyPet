@@ -10,23 +10,18 @@ export  class controllerCart {
 
   }
 
-  // beginFilterProcess() {
-  //   this.model.beginFilterProcess();
-  // }
-  
-
 
 buildCart() {
   this.model.getAnimals().then((dd) => {
     this.storage.arrAllProds = dd;
-    // console.log(dd);
     this.getItchBtn(dd)
+    // this.buildProductCart(dd)
     this.buildOrderCart(dd)
   })
 }
   
   getItchBtn(data) {
-    // this.model.getItchBtn(data);
+    
   }
 
   BtnInfo(prodArr) {
@@ -36,8 +31,9 @@ buildCart() {
   buildOrderCart(prodArr) {
     this.view.buildOrderCart(prodArr);
   }
-  // getItemInfo(){
-  //   console.log("HYU");
-  //   this.model.getItemInfo();
-  // }
+
+   buildProductCart(data, item) {
+     this.view.buildProductCart(data, item);
+  }
+ 
 }
