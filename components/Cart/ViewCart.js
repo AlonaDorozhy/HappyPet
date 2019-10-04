@@ -3,47 +3,36 @@ export default class viewCart {
       this.controller = contr;
       this.storage = this.controller.storage;
       this.OrderCartDOM = document.querySelector('.ui.modal.cartInf');
-
       this.CartClick = document.getElementById('cartOrder');
       this.AddProduct = document.querySelector('.btnAdd')
-      // console.log(this.AddProduct.);
-      // this.AddProduct.addEventListener('click', () => this.getItemInfo());
       this.OrderCartDOM.innerHTML = ""
       this.CartClick.addEventListener('click', () => this.buildOrderCart());
       this.storage = this.controller.storage;
+      this.cartArr = []
+      // this.ProdCartDOM = document.querySelector('div.segmentFirst');
+ this.all = []
+ 
    }
 
-   buildProductCart(data, current){
-console.log(data);
-console.log(current);
-   }
-
-   buildOrderCart(prodArr) {
-      // console.log(prodArr);
-      $(document).ready(function () {
-         $('.demo.menu .item').tab({ history: false });
+   buildProductCart(data, current) {
+      data.forEach(el => {
+         if (el.id === current) {
+            console.log(el);
+            this.cartArr.push(el);
+         }
       });
-
-    
-      this.OrderCartDOM.innerHTML = ''
-      this.OrderCartDOM.innerHTML += `
-      
-<form class="ui form">
-<div class="ui pointing secondary demo menu">
-
-    <a class="active red item" data-tab="first">Shopping cart</a>
-    <a class="blue item" data-tab="second">Order form</a>
-    <a class="green item" data-tab="third">History of orders</a>
-</div>
-
-<div class="ui active tab segment" data-tab="first">
- <h4 class="ui dividing header"> List of orders</h4>
+   
+      this.cartArr.forEach(el => {
+         this.ProdCartDOM = document.querySelector('div.segmentFirst');
+         console.log(el); 
+         this.first = `
+      <h4 class="ui dividing header"> List of orders</h4>
    <div class="ui card" style="max-width: 100%; min-width: 100%;">
     <div class="content" style="padding: 0;">
         <div class="ui items">
             <div class="item">
                 <div class="ui medium image">
-                    <img src="https://semantic-ui.com/images/wireframe/image.png">
+                    <img src="${el.url}">
                 </div>
                 <div class="content" style="padding: 1rem;">
                     <a class="header">12 Years a Slave</a>
@@ -66,7 +55,38 @@ console.log(current);
             More Info
         </a>
     </div>
+</div>`
+
+ 
+      });
+      this.all.push(this.first)
+   
+     
+   }
+
+   buildOrderCart(prodArr) {
+      $(document).ready(function () {
+         $('.demo.menu .item').tab({ history: false });
+      });
+      // console.log(this.first);   
+
+      this.OrderCartDOM.innerHTML = ''
+      this.OrderCartDOM.innerHTML += `
+      
+<form class="ui form">
+<div class="ui pointing secondary demo menu">
+
+    <a class="active red item" data-tab="first">Shopping cart</a>
+    <a class="blue item" data-tab="second">Order form</a>
+    <a class="green item" data-tab="third">History of orders</a>
 </div>
+
+ <div class="ui active tab segment " data-tab="first">
+ <div class="segmentFirst">
+${this.all}
+ </div>
+
+
 </div>
 <div class="ui tab segment" data-tab="second">
 <div class="row">
@@ -101,7 +121,7 @@ console.log(current);
          </select>
          </div>
          <div class="six wide field">
-            <input type="text" placeholder="Улица ">
+            <input type="text" placeholder="Street ">
          </div>
          <div class="four wide field">
             <input type="text"  placeholder="Apt #">
@@ -114,7 +134,7 @@ console.log(current);
    <div class="fields">
       <div class="seven wide field">
          <label>Номер карты</label>
-         <input type="text" maxlength="16" placeholder="Карта #">
+         <input type="text" maxlength="16" placeholder="Card #">
       </div>
       <div class="six wide field">
         <label>Card Type</label>
@@ -124,7 +144,7 @@ console.log(current);
             <option class="item" data-value="amex">
                 <i class="amex icon"></i> American Express </option>
             <option class="item" data-value="discover">
-                <i class="discover icon"></i> Открытие </option>
+                <i class="discover icon"></i>Discover</option>
          </select>
       </div>
 
@@ -135,7 +155,7 @@ console.log(current);
          <input type="text" maxlength="3" placeholder="CVC">
       </div>
       <div class="six wide field">
-         <label>Просрочка</label>
+         <label>End day</label>
          <div class="two fields">
             <div class="field">
                <select class="ui fluid search dropdown" name="card[expire-month]">
@@ -162,13 +182,12 @@ console.log(current);
       </div>
    </div>
    
-   <h4 class="ui dividing header">Квитанция</h4>
+   <h4 class="ui dividing header">Invoice</h4>
    <div class="fields">
     <div class="field six wide">
-      <label>Отправить квитанцию :</label>
+      <label>Send invoice :</label>
       <input type="text" name="phone" placeholder=" Phone Number">
-   </div>
-   
+   </div
       <div class="ui btnAdd button successBtn">
           <i class="cart arrow down icon"></i>Confirm the order
         </div>
@@ -177,12 +196,9 @@ console.log(current);
 
   
 <div class="ui  tab segment" data-tab="third">
-
 <div class="row">
-
    <h4 class="ui dividing header">History</h4></div>
 </div>
-
 </form>
 
 `

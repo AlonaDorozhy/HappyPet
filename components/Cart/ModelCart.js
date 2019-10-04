@@ -1,70 +1,65 @@
 export default class modelCart {
-  constructor(controller) { 
+  constructor(controller) {
     this.controller = controller;
     this.data = [];
     this.history = localStorage.getItem("history") ? JSON.parse(localStorage.getItem("history")) : [];
     this.animalFactory = new AnimalFactory();
 
-   this.btn = []
-   this.btnItch 
-    // this.controller.buildProductCart(prodArr);
-    
+    this.btn = []
+    this.btnItch
+
+
   }
 
-  beginFilterProcess() {
-    let prodArr = this.storage.arrAllProds.slice();
-    if (this.storage.searchByNameStatus === true) {
-      prodArr = this.startFilterByName(prodArr);
-    }
+  // beginFilterProcess() {
+  //   let prodArr = this.storage.arrAllProds.slice();
+  //   if (this.storage.searchByNameStatus === true) {
+  //     prodArr = this.startFilterByName(prodArr);
+  //   }
 
-    this.controller.buildProductList(prodArr);
-    this.controller.buildProductCart(prodArr);
-  }
+  //   this.controller.buildProductList(prodArr);
+  //   this.controller.buildProductCart(prodArr);
+  // }
 
   getIchBtn(data) {
     data.forEach(pets => {
       this.btnItch = document.getElementById(pets.id);
-  
-      this.btnItch.addEventListener('click', () => this.btnProduct(data, pets.id)) 
 
+      this.btnItch.addEventListener('click', () => this.btnProduct(data, pets.id))
     });
 
-}
-  // buildProductCart(prodArr) {
-  //   this.view.buildProductCart(prodArr);
-  // }
-  btnProduct(data, current){
+  }
+
+  btnProduct(data, current) {
     this.controller.buildProductCart(data, current);
-    // this.view.buildProductCart(data, current)
-// console.log('Text');
-// console.log(current);
+    this.controller.buildOrderCart(data, current)
+    console.log(current);
 
-// console.log(data);
-}
+  }
 
-getAnimals() {
+  getAnimals() {
 
-  return fetch('../../../data/products2.json')
-    .then((d) => {
-      return d.json()
+    return fetch('../../../data/products2.json')
+      .then((d) => {
+        return d.json()
 
-    })
-    .then((json) => {
-      this.data = this.animalFactory.createData(json);
-      localStorage.setItem("data", JSON.stringify(this.data));
-      this.data = json;
-    this.getIchBtn(this.data) 
-      return this.data;
-    });
+      })
+      .then((json) => {
+        this.data = this.animalFactory.createData(json);
+        localStorage.setItem("data", JSON.stringify(this.data));
+        this.data = json;
+        this.getIchBtn(this.data)
+        return this.data;
+      });
 
-}
+  }
 }
 
 export class AnimalFactory {
   createData(array) {
 
     let data = array.map(el => {
-    
+
       if (el.type === "cat") {
         localStorage.setItem("cat", JSON.stringify(el));
       }

@@ -14,9 +14,8 @@ export  class controllerCart {
 buildCart() {
   this.model.getAnimals().then((dd) => {
     this.storage.arrAllProds = dd;
-    this.getItchBtn(dd)
-    // this.buildProductCart(dd)
-    this.buildOrderCart(dd)
+    this.getItchBtn(dd);
+    this.buildOrderCart(dd);
   })
 }
   
