@@ -10,7 +10,7 @@ export default class viewCart {
       this.storage = this.controller.storage;
       this.cartArr = []
       // this.ProdCartDOM = document.querySelector('div.segmentFirst');
- this.all = []
+ this.allCartProd = []
  
    }
 
@@ -21,47 +21,55 @@ export default class viewCart {
             this.cartArr.push(el);
          }
       });
-   
+    //  <div class="content" style="padding: 1rem;">
       this.cartArr.forEach(el => {
          this.ProdCartDOM = document.querySelector('div.segmentFirst');
          console.log(el); 
          this.first = `
-      <h4 class="ui dividing header"> List of orders</h4>
-   <div class="ui card" style="max-width: 100%; min-width: 100%;">
+   
+  <div class="ui card" style="max-width: 100%; min-width: 100%;">
     <div class="content" style="padding: 0;">
         <div class="ui items">
             <div class="item">
                 <div class="ui medium image">
                     <img src="${el.url}">
                 </div>
-                <div class="content" style="padding: 1rem;">
-                    <a class="header">12 Years a Slave</a>
-                    <div class="meta">
-                        <span class="cinema">Union Square 14</span>
-                    </div>
-                    <div class="description">
-                        <p></p>
-                    </div>
-                    <div class="extra">
-                        <div class="ui label">IMAX</div>
-                        <div class="ui label"><i class="globe icon"></i> Additional Languages</div>
-                    </div>
-                </div>
+             <div class="ui grid"> 
+             <a class="header"></a>
+            <div class="meta">
+                    <div class="infoDetails">
+                          <h3> ${el.name} </h3>
+                          <hr> 
             </div>
         </div>
+                   
+    <div class="row">
+        <div class="three wide column">Ordered</div>
+        <div class="five wide column">
+        <div class="center aligned cart-quant">
+            <i class="plus icon large disabled" data-id="0"></i>
+            <span> 10 </span>
+            <i class="minus icon large" data-id="0"></i>
+        </div>
+        </div>
+        <div class="five wide column"><p class="prodPrice"><i class="money bill alternate outline icon"></i>: ${el.price}</p></div>
+  </div>
+ 
+  </div>
+       
+    </div>  <p>Gender of pet: ${el.gender}.</p>   
     </div>
     <div class="extra content">
         <a>
             More Info
         </a>
     </div>
-</div>`
+    </div></div>`
 
- 
       });
-      this.all.push(this.first)
+      this.allCartProd.push(this.first)
    
-     
+ 
    }
 
    buildOrderCart(prodArr) {
@@ -83,7 +91,8 @@ export default class viewCart {
 
  <div class="ui active tab segment " data-tab="first">
  <div class="segmentFirst">
-${this.all}
+    <h4 class="ui dividing header"> List of orders</h4>
+${this.allCartProd}
  </div>
 
 

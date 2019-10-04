@@ -31,9 +31,14 @@ export class viewProduct {
                   <div class="description">
                     <p class="prodType">${pets.type}: ${pets.name}</p>
                     <p class="prodInfo">Colors: ${pets.color.join('/')}</p>
-                    <p class="prodPrice">Price: ${pets.price}</p>
                   </div>
+                  
                 </div>
+                <div class="four column row">  
+                <div class="left floated column"> <p class="prodQuantity">Available: ${pets.quantity}</p></div>
+    <div class="right floated column">  <p class="prodPrice"><i class="money bill alternate outline icon"></i>: ${pets.price}</p></div>
+  
+  </div>
                 <div class="ui two bottom attached buttons">
                   <button class="ui button btnMore create_btn" type="button" id="item${pets.id}"><i
                       class="expand arrows alternate"></i>
@@ -67,7 +72,9 @@ export class viewProduct {
                           <p>The pet has a pedigree: ${pets.pedigree}.</p>
                           <p>The pet needs trimming: ${pets.trimming}.</p>
                         </div>
+                        
                       </div>
+                      
                     </div>
                     <div class="actions">
                       <div class="ui black deny button">
