@@ -10,8 +10,8 @@ export default class viewCart {
       this.storage = this.controller.storage;
       this.cartArr = []
       // this.ProdCartDOM = document.querySelector('div.segmentFirst');
- this.allCartProd = []
- 
+      this.allCartProd = []
+
    }
 
    buildProductCart(data, current) {
@@ -21,29 +21,28 @@ export default class viewCart {
             this.cartArr.push(el);
          }
       });
-    //  <div class="content" style="padding: 1rem;">
+      //  <div class="content" style="padding: 1rem;">
       this.cartArr.forEach(el => {
          this.ProdCartDOM = document.querySelector('div.segmentFirst');
-         console.log(el); 
+         console.log(el);
          this.first = `
    
   <div class="ui card" style="max-width: 100%; min-width: 100%;">
     <div class="content" style="padding: 0;">
         <div class="ui items">
             <div class="item">
-                <div class="ui medium image">
+                <div class="ui small image CartImg ">
                     <img src="${el.url}">
                 </div>
-             <div class="ui grid"> 
-             <a class="header"></a>
+             <div class="ui grid CartInfo"> 
             <div class="meta">
                     <div class="infoDetails">
                           <h3> ${el.name} </h3>
-                          <hr> 
-            </div>
+                          
+            </div> <hr>
         </div>
                    
-    <div class="row">
+    <div class="row cartMainInfo">
         <div class="three wide column">Ordered</div>
         <div class="five wide column">
         <div class="center aligned cart-quant">
@@ -59,17 +58,12 @@ export default class viewCart {
        
     </div>  <p>Gender of pet: ${el.gender}.</p>   
     </div>
-    <div class="extra content">
-        <a>
-            More Info
-        </a>
-    </div>
     </div></div>`
 
       });
       this.allCartProd.push(this.first)
-   
- 
+
+
    }
 
    buildOrderCart(prodArr) {

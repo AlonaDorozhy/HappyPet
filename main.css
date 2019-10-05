@@ -2,10 +2,19 @@
   background: white url(img/main.jpg);
   background-repeat: no-repeat;
   background-position: right top;
+  padding-top: 10px!important;
 }
 
 .inverted .menu {
   background-color: darkslategray;
+}
+
+.ui.menu .item>img:not(.ui) {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 30% !important;
+  width: 100%;
+  padding: 2px;
 }
 
 .ui.inverted.menu {
@@ -15,7 +24,15 @@
 .item img {
   padding: 2px !important;
   margin: 0px !important;
-  height: 60px;
+  /* height: 60px; */
+}
+
+.search.icon {
+  margin-right: 10px;
+}
+
+.ui.menu .item>i.icon {
+  font-size: 26px;
 }
 
 .ui.menu .item>img:not(.ui) {
@@ -53,6 +70,7 @@ a {
 }
 
 #sidebar {
+  width: 15% !important;
   position: fixed;
   height: 100vh;
   background-color: #f5f5f5;
@@ -60,6 +78,8 @@ a {
   padding-left: 0;
   padding-right: 0;
   border-radius: 0 7px;
+  margin-left: 4%;
+  height: auto !important;
 }
 
 #sidebar .ui.menu>a.item {
@@ -71,11 +91,12 @@ a {
   margin-bottom: 0;
 }
 
-#sidebar .ui.menu>a.item.active {
+.accordion-wrapper h3.item.active {
   background-color: #208171;
+  padding: 10px 0 10px 10px;
   color: white;
-  border: none !important;
-  font-weight: 600;
+  margin: 2px;
+  cursor: pointer;
 }
 
 #sidebar .ui.menu>a.item:hover {
@@ -204,8 +225,51 @@ footer {
   font-weight: 600;
 }
 
+.ui.two.buttons>.button.btnMore:hover {
+  background-color: #365d77;
+  width: 50%;
+  color: white;
+  font-weight: 600;
+}
+
 .ui.two.buttons>.button.btnAdd {
   background-color: #31b46c;
+  width: 50%;
+  color: white;
+  font-weight: 600;
+}
+
+.ui.positive.right.labeled.icon.button.btnAdd {
+  margin-top: 20px;
+  width: 200px !important;
+}
+
+.ui.labeled.icon.button {
+  position: relative;
+  display: flex;
+  float: right;
+
+}
+
+.ui.labeled.icon.button {
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  background-color: #208171;
+  color: white;
+  widows: 50% !important;
+}
+
+.ui.black.button, .ui.black.buttons .button {
+  background-color: #1b1c1d;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+  float: right;
+}
+
+.ui.two.buttons>.button.btnAdd:hover {
+  background-color: #29965a;
   width: 50%;
   color: white;
   font-weight: 600;
@@ -357,6 +421,11 @@ i.icon.search:before {
 
 /*  */
 
+.ui.inverted.menu .active.item {
+  background: none !important;
+  color: #fff!important;
+}
+
 .cartInf {
   font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -398,19 +467,46 @@ i.icon.search:before {
   font-size: 18px;
 }
 
-.ui.labeled.icon.button, .ui.labeled.icon.buttons {
+.ui.labeled.icon.button {
   position: relative;
-  /* padding-left: 4.07142857em!important;
-  padding-right: 1.5em!important; */
-  background-color: #3b6391;
+  display: block;
+  background-color: #208171;
   color: white;
   widows: 50% !important;
+}
+
+.FilterBtn {
   /* padding-left: 55%; */
-  margin-left: 30%;
+  margin-left: 30% !important;
+  background-color: #208171 !important;
+  width: 135px !important;
+  display: block;
+}
+
+.FilterBtn:hover {
+  position: relative;
+  background-color: #ffffffcb!important;
+  color: rgb(9, 48, 35);
+  widows: 30% !important;
+  display: block;
+}
+
+.ui.labeled.icon.button:hover {
+  position: relative;
+  background-color: #ffffff;
+  color: rgb(9, 48, 35);
+  widows: 50% !important;
+  padding-left: 55%;
+  /* margin-left: 30%; */
+  display: block;
 }
 
 .ui.floating.dropdown>.menu {
-  background-color: #4c7aaf;
+  background-color: #208171;
+}
+
+.ui.floating.dropdown>.menu:hover {
+  background-color: #208171;
 }
 
 .ui.label {
@@ -491,4 +587,54 @@ i.icon.search:before {
     transform: translateX(80px);
     opacity: 0;
   }
+}
+
+.CartImg {
+  height: 45% !important;
+  margin-left: 25px !important;
+}
+
+.CartInfo {
+  padding-left: 3px !important;
+  margin-left: 3px !important;
+}
+
+.cartMainInfo {
+  font-size: 23px;
+}
+
+/* ////////////////// */
+
+.accordion-wrapper {
+  width: 230px;
+  margin: 0 auto;
+}
+
+.accordion-wrapper h3 {
+  background-color: rgba(26, 99, 81, 0.486);
+  padding: 10px 0 10px 10px;
+  color: white;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.accordion-wrapper h3:hover {
+  background-color: rgba(243, 214, 152, 0.87);
+  padding: 10px 0 10px 10px;
+  color: rgb(8, 31, 17);
+  margin: 2px;
+  cursor: pointer;
+}
+
+.accordion-wrapper div {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.purple {
+  color: purple;
 }

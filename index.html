@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
   <div id="root">
     <div class="ui tablet computer only grid">
       <div class="ui top fixed borderless huge inverted menu">
@@ -28,19 +27,42 @@
               <div class="ui small input"><i class="search icon"></i><input class="searchInput"
                   placeholder="search by bread "></div>
             </div>
-            <!-- <div class="ui button mini-cart open-cart"><i class="cart icon"></i>
-              <div class="cart-mini">10</div> -->
-            </div>
-            <a id="cartOrder" class="item "><i class="cart arrow down icon"></i><div class="cart-mini">0</div></a>
+
           </div>
+          <a id="cartOrder" class="item "><i class="cart arrow down icon"></i><sup class="cart-mini">0</sup>
+          </a>
         </div>
       </div>
     </div>
   </div>
-
+  </div>
   <div class="ui padded grid">
 
+
     <div class="three wide tablet only three wide computer only column" id="sidebar">
+      <div class="accordion-wrapper   MainMenu">
+        <h3 class="active item itemFilter">All Pets</h3>
+        <div class="hide filter filterText">This is my first accordion paragraph text that I will show and hide using
+          vanilla JavaScript.
+        </div>
+        <h3 class="item itemFilter">Cats</h3>
+        <div class="hide filter filterText ">This is my first accordion paragraph text that I will show and hide using
+          vanilla JavaScript.
+        </div>
+        <h3 class="item itemFilter">Dogs</h3>
+        <div class="hide filter filterText">This is my first accordion paragraph text that I will show and hide using
+          vanilla JavaScript.
+        </div>
+        <h3 class="item itemFilter">Birds</h3>
+        <div class="hide filter filterText">This is my first accordion paragraph text that I will show and hide using
+          vanilla JavaScript.
+        </div>
+        <h3 class="item itemFilter">Fishes</h3>
+        <div class="hide filter filterText">This is my first accordion paragraph text that I will show and hide using
+          vanilla JavaScript.
+        </div>
+
+      </div>
       <div>
 
         <div class="ui floating dropdown labeled icon button FilterBtn">
@@ -67,16 +89,22 @@
           </div>
         </div>
       </div>
-      <div class="ui vertical borderless fluid text menu MainMenu">
 
-        <a class="active item">All pets</a>
-        <a class="item">Cats</a>
-        <a class="item">Dogs</a>
-        <a class="item">Birds</a>
-        <a class="item">Fishes</a>
-        <a class="item">Another nav item</a>
-
-      </div>
+      <!-- <div class="ui vertical borderless  text menu MainMenu">
+        <a class="active item ">All pets</a>
+        <a class="item ">Cats</a>
+        <p class="hide">This is my first accordion paragraph text that I will show and hide using vanilla JavaScript.
+        </p>
+        <a class="item ">Dogs</a>
+        <p class="hide">This is my first accordion paragraph text that I will show and hide using vanilla JavaScript.
+        </p>
+        <a class="item ">Birds</a>
+        <p class="hide">This is my first accordion paragraph text that I will show and hide using vanilla JavaScript.
+        </p>
+        <a class="item ">Fishes</a>
+        <p class="hide">This is my first accordion paragraph text that I will show and hide using vanilla JavaScript.
+        </p>
+      </div> -->
     </div>
     <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer right floated column" id="content">
       <div class="ui padded grid">
@@ -115,10 +143,6 @@
                 </div>
               </div>
             </div>
-
-
-
-
           </div>
           <footer>&copy; Happy Pet loves you</footer>
         </div>
@@ -130,9 +154,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   <script>
-    
 
- $('.tabular.menu .item').tab();
+
+    $('.tabular.menu .item').tab();
     $(function () {
       $(`#cartOrder`).click(function () {
         console.log("click");
@@ -145,17 +169,17 @@
     $('.ui.dropdown')
       .dropdown()
       ;
-  $('.menu .item').tab();
-      $(document).ready(function () {
-          $('.demo.menu .item').tab();
-        });
+    $('.menu .item').tab();
     $(document).ready(function () {
-     
+      $('.demo.menu .item').tab();
+    });
+    $(document).ready(function () {
+
       $(".ui.toggle.button").click(function () {
         $(".mobile.only.grid .ui.vertical.menu").toggle(100);
       });
 
-   // toggle right sidebar
+      // toggle right sidebar
       $(".ui.sidebar")
         .sidebar({
           context: $(".pushable"),

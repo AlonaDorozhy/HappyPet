@@ -2,13 +2,12 @@ export class modelCategory {
   constructor(controller) {
     this.controller = controller;
     this.storage = this.controller.storage;
-
     this.onlyChosen=[]
   }
 
   beginCategorySorting() {
     const category = this.controller.getSearchValue();
-    console.log(category);
+
     let prodArr = this.storage.arrAllProds.slice();
     this.controller.buildProductList(prodArr);
     if (category === "Cats") {

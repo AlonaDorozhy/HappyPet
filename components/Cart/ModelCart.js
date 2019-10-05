@@ -4,22 +4,13 @@ export default class modelCart {
     this.data = [];
     this.history = localStorage.getItem("history") ? JSON.parse(localStorage.getItem("history")) : [];
     this.animalFactory = new AnimalFactory();
-
     this.btn = []
     this.btnItch
 
 
   }
 
-  // beginFilterProcess() {
-  //   let prodArr = this.storage.arrAllProds.slice();
-  //   if (this.storage.searchByNameStatus === true) {
-  //     prodArr = this.startFilterByName(prodArr);
-  //   }
 
-  //   this.controller.buildProductList(prodArr);
-  //   this.controller.buildProductCart(prodArr);
-  // }
 
   getIchBtn(data) {
     data.forEach(pets => {

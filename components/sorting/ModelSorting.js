@@ -8,17 +8,19 @@ export class modelSorting {
   beginSortingProcess() {
     const name = this.controller.getSearchValue();
     let prodArr = this.storage.arrAllProds.slice();
-    this.controller.buildProductList(prodArr);
+    // this.controller.buildProductList(prodArr);
     if (name === "Price") {
       this.startSortingByPrice(prodArr);
     }
-     if (name === "Quantity") {
+     else if (name === "Quantity") {
       this.startSortingByQuantity(prodArr);
     }
-     if (name === "Alphabet") {
+     else if (name === "Alphabet") {
       this.startSortingByAlphabet(prodArr);
     }
-
+else{
+      this.controller.buildProductList(prodArr);
+}
   }
 
   sortOn(prop) {
@@ -34,30 +36,22 @@ export class modelSorting {
   }
 
   startSortingByPrice(prodArr) {
-
     this.price = prodArr.price;
     prodArr.sort(this.sortOn("price"));
-
-    console.log(prodArr);
-    this.controller.buildProductList(prodArr);
+     this.controller.buildProductList(prodArr);
 
   }
   startSortingByQuantity(prodArr) {
-
     this.price = prodArr.price;
     prodArr.sort(this.sortOn("quantity"));
-
-    console.log(prodArr);
-    this.controller.buildProductList(prodArr);
+ this.controller.buildProductList(prodArr);
 
   }
   startSortingByAlphabet(prodArr) {
 
     this.price = prodArr.price;
     prodArr.sort(this.sortOn("name"));
-
-    console.log(prodArr);
-    this.controller.buildProductList(prodArr);
+this.controller.buildProductList(prodArr);
 
   }
 

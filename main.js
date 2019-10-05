@@ -1,13 +1,3 @@
-// $(function () {
-//         $(`#cartOrder`).click(function () {
-//           console.log("click");
-//           $(`.cartInf`).modal('show');
-//         });
-//         $(`.cartInf`).modal({
-//           closable: true
-//         });
-//       });
-
 $(document).ready(function () {
   $('.demo.menu .item').tab({ history: false });
 });
@@ -77,7 +67,6 @@ $(document).ready(function () {
     $(".mobile.only.grid .ui.vertical.menu").toggle(100);
   });
 
-  // toggle right sidebar
   $(".ui.sidebar")
     .sidebar({
       context: $(".pushable"),
@@ -87,35 +76,20 @@ $(document).ready(function () {
     .sidebar("attach events", ".ui.top.attached.blue.button");
 });
 
+// var accordionWrapperNode = document.getElementsByClassName('accordion-wrapper')[0];
+// var accordionHeadline = accordionWrapperNode.getElementsByTagName('h3');
 
+// function accordionToggle (e) {
+// 	e.preventDefault();
+// 	var accordionContent = this.nextSibling.nextSibling;
+// 	if (accordionContent.classList.contains('hide')) {
+// 		accordionContent.className = "";
+// 	} else {
+// 		accordionContent.className = "hide";
+// 	}
+// }
 
-// <h4 class="ui dividing header"> List of orders</h4>
-//   <div class="ui card" style="max-width: 100%; min-width: 100%;">
-//     <div class="content" style="padding: 0;">
-//       <div class="ui items">
-//         <div class="item">
-//           <div class="ui medium image">
-//             <img src="https://semantic-ui.com/images/wireframe/image.png">
-//                 </div>
-//             <div class="content" style="padding: 1rem;">
-//               <a class="header">12 Years a Slave</a>
-//               <div class="meta">
-//                 <span class="cinema">Union Square 14</span>
-//               </div>
-//               <div class="description">
-//                 <p></p>
-//               </div>
-//               <div class="extra">
-//                 <div class="ui label">IMAX</div>
-//                 <div class="ui label"><i class="globe icon"></i> Additional Languages</div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <div class="extra content">
-//         <a>
-//           More Info
-//         </a>
-//       </div>
-//     </div>
+// for (var i = 0; i < accordionHeadline.length; i++) {
+// 	accordionHeadline[i].addEventListener("click", accordionToggle);
+// }
+

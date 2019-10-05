@@ -9,7 +9,7 @@ export class modelSearch {
     if (this.storage.searchByNameStatus === true) {
       prodArr = this.startFilterByName(prodArr);
     } 
-
+console.log("huy");
     this.controller.buildProductList(prodArr);
   }
 

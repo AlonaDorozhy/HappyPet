@@ -9,8 +9,7 @@ export class viewCategory {
 
 
   checkCategory() {
-    this.active = document.querySelector('a.item.active').innerText
-    console.log(this.active);
+    this.active = document.querySelector('h3.item.active').innerText
     this.controller.beginCategorySorting();
   }
 

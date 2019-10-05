@@ -9,7 +9,7 @@ export class controllerSearch {
     this.model = new modelSearch(this);
     this.view = new viewSearch(this);
 
-    console.log(this.storage);
+    // console.log(this.storage);
   }
 
   beginFilterProcess() {

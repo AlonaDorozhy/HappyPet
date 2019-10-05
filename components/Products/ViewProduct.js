@@ -3,7 +3,7 @@ export class viewProduct {
     this.controller = contr;
     this.storage = this.controller.storage;
     this.productListDOM = document.querySelector('.productList');
-    
+
   }
 
   buildProductList(prodArr) {
@@ -47,6 +47,7 @@ export class viewProduct {
                   <div class="ui modal item${pets.id}">
                     <i class="close icon"></i>
                     <div class="header  detProdTypeHead ">
+                    
                       ${pets.type}: ${pets.name}
                     </div>
                     <div class="image content">
@@ -80,7 +81,7 @@ export class viewProduct {
                       <div class="ui black deny button">
                         Back
                       </div>
-                      <div name="${ pets.id }" id="${pets.id}innerBtn"  class="ui positive right labeled icon button btnAdd">
+                      <div name="${ pets.id}" id="${pets.id}innerBtn"  class="ui positive right labeled icon button btnAdd">
                         Add to cart
                         <i class="checkmark icon"></i>
                       </div>
