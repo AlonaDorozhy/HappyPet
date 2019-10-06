@@ -38,31 +38,14 @@ $('#context2 .menu .item')
 $('.menu .item')
   .tab()
   ;
-$(document).ready(function () {
-  // hide and open menu on small screen
-  $(".ui.toggle.button").click(function () {
-    $(".mobile.only.grid .ui.vertical.menu").toggle(100);
-  });
 
-  // toggle right sidebar
-  $(".ui.sidebar")
-    .sidebar({
-      context: $(".pushable"),
-      animation: "slide along",
-      dimPage: false
-    })
-    .sidebar("attach events", ".ui.top.attached.blue.button");
-});
 
 $('.ui .item').on('click', function () {
   $('.ui .item').removeClass('active');
   $(this).addClass('active');
 }); 
-$('.ui.dropdown')
-  .dropdown()
-  ;
+
 $(document).ready(function () {
-  // hide and open menu on small screen
   $(".ui.toggle.button").click(function () {
     $(".mobile.only.grid .ui.vertical.menu").toggle(100);
   });
@@ -76,20 +59,18 @@ $(document).ready(function () {
     .sidebar("attach events", ".ui.top.attached.blue.button");
 });
 
-// var accordionWrapperNode = document.getElementsByClassName('accordion-wrapper')[0];
-// var accordionHeadline = accordionWrapperNode.getElementsByTagName('h3');
 
-// function accordionToggle (e) {
-// 	e.preventDefault();
-// 	var accordionContent = this.nextSibling.nextSibling;
-// 	if (accordionContent.classList.contains('hide')) {
-// 		accordionContent.className = "";
-// 	} else {
-// 		accordionContent.className = "hide";
-// 	}
-// }
-
-// for (var i = 0; i < accordionHeadline.length; i++) {
-// 	accordionHeadline[i].addEventListener("click", accordionToggle);
-// }
+$(function () {
+  $(`#cartOrder`).click(function () {
+  
+    $(`.cartInf`).modal('show');
+  });
+  $(`.cartInf`).modal({
+    closable: true
+  });
+});
+$('.ui.dropdown')
+  .dropdown()
+  ;
+$('.menu .item').tab();
 

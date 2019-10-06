@@ -7,16 +7,26 @@ export class modelSorting {
 
   beginSortingProcess() {
     const name = this.controller.getSearchValue();
+    console.log(name);
     let prodArr = this.storage.arrAllProds.slice();
-    // this.controller.buildProductList(prodArr);
+    
     if (name === "Price") {
-      this.startSortingByPrice(prodArr);
+      this.price = prodArr.price;
+      prodArr.sort(this.sortOn("price"));
+      this.controller.buildProductList(prodArr);
+    
     }
      else if (name === "Quantity") {
-      this.startSortingByQuantity(prodArr);
+      this.price = prodArr.price;
+      prodArr.sort(this.sortOn("quantity"));
+      this.controller.buildProductList(prodArr);
+
     }
      else if (name === "Alphabet") {
-      this.startSortingByAlphabet(prodArr);
+      this.price = prodArr.price;
+      prodArr.sort(this.sortOn("name"));
+      this.controller.buildProductList(prodArr);
+
     }
 else{
       this.controller.buildProductList(prodArr);
@@ -35,25 +45,25 @@ else{
     }
   }
 
-  startSortingByPrice(prodArr) {
-    this.price = prodArr.price;
-    prodArr.sort(this.sortOn("price"));
-     this.controller.buildProductList(prodArr);
+  // startSortingByPrice(prodArr) {
+  //   this.price = prodArr.price;
+  //   prodArr.sort(this.sortOn("price"));
+  //    this.controller.buildProductList(prodArr);
 
-  }
-  startSortingByQuantity(prodArr) {
-    this.price = prodArr.price;
-    prodArr.sort(this.sortOn("quantity"));
- this.controller.buildProductList(prodArr);
+  // }
+//   startSortingByQuantity(prodArr) {
+//     this.price = prodArr.price;
+//     prodArr.sort(this.sortOn("quantity"));
+//  this.controller.buildProductList(prodArr);
 
-  }
-  startSortingByAlphabet(prodArr) {
+//   }
+//   startSortingByAlphabet(prodArr) {
 
-    this.price = prodArr.price;
-    prodArr.sort(this.sortOn("name"));
-this.controller.buildProductList(prodArr);
+//     this.price = prodArr.price;
+//     prodArr.sort(this.sortOn("name"));
+// this.controller.buildProductList(prodArr);
 
-  }
+//   }
 
 
 

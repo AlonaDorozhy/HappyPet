@@ -9,12 +9,7 @@ export class controllerFilter {
     this.model = new modelFilter(this);
     this.view = new viewFilter(this);
   }
-  // initFilterStatus() {
-  //   this.model.initFilterStatus();
-  // }
-  // getSearchValue() {
-  //   return this.view.getSearchValue();
-  // }
+
   beginFilterSorting() {
     this.model.beginFilterSorting();
    

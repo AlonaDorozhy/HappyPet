@@ -2,24 +2,25 @@ export class modelCategory {
   constructor(controller) {
     this.controller = controller;
     this.storage = this.controller.storage;
+
     this.onlyChosen=[]
   }
 
-  beginCategorySorting() {
-    const category = this.controller.getSearchValue();
-
+  beginCategorySorting(active) {
+    
+    console.log(active);
     let prodArr = this.storage.arrAllProds.slice();
     this.controller.buildProductList(prodArr);
-    if (category === "Cats") {
+    if (active === "Cats") {
       this.ShowOnlyCats(prodArr);
     }
-    if (category === "Dogs") {
+    if (active === "Dogs") {
       this.ShowOnlyDogs(prodArr);
     }
-    if (category === "Birds") {
+    if (active === "Birds") {
       this.ShowOnlyBirds(prodArr);
     }
-    if (category === "Fishes") {
+    if (active === "Fishes") {
       this.ShowOnlyFishes(prodArr);
     }
   }

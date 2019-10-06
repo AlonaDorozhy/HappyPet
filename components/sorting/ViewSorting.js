@@ -7,7 +7,6 @@ export class viewSorting {
     this.searchSorting.addEventListener('click', () => this.checkSorting());
   }
 
-
   checkSorting() {
     this.current = document.querySelector('div.item.active.selected')
     this.active = this.current.querySelector('span.innerText').innerText
@@ -15,8 +14,7 @@ export class viewSorting {
   }
 
   getSearchValue() {
-
-    return this.active;
+    return this.active
   }
 
 

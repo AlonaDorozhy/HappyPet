@@ -6,14 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Shop</title>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-    type="text/css" />
+
+  <link rel="stylesheet" type="text/css" href="style/semantic/semantic.min.css">
 
   <link rel="stylesheet" href="main.css">
-  <style type="text/css">
-  </style>
+
 </head>
 
 <body>
@@ -25,11 +22,12 @@
           <div class="right menu">
             <div class="item">
               <div class="ui small input"><i class="search icon"></i><input class="searchInput"
-                  placeholder="search by bread "></div>
+                  placeholder="search by bread ">
+              </div>
             </div>
-
           </div>
-          <a id="cartOrder" class="item "><i class="cart arrow down icon"></i><sup class="cart-mini">0</sup>
+          <a id="cartOrder" class="item "><i class="cart arrow down icon"></i>
+            <sup class="cart-mini">0</sup>
           </a>
         </div>
       </div>
@@ -37,29 +35,22 @@
   </div>
   </div>
   <div class="ui padded grid">
-
-
     <div class="three wide tablet only three wide computer only column" id="sidebar">
       <div class="accordion-wrapper   MainMenu">
         <h3 class="active item itemFilter">All Pets</h3>
-        <div class="hide filter filterText">This is my first accordion paragraph text that I will show and hide using
-          vanilla JavaScript.
+        <div class="hide filter filterText">
         </div>
         <h3 class="item itemFilter">Cats</h3>
-        <div class="hide filter filterText ">This is my first accordion paragraph text that I will show and hide using
-          vanilla JavaScript.
+        <div class="hide filter filterText ">
         </div>
         <h3 class="item itemFilter">Dogs</h3>
-        <div class="hide filter filterText">This is my first accordion paragraph text that I will show and hide using
-          vanilla JavaScript.
+        <div class="hide filter filterText">
         </div>
         <h3 class="item itemFilter">Birds</h3>
-        <div class="hide filter filterText">This is my first accordion paragraph text that I will show and hide using
-          vanilla JavaScript.
+        <div class="hide filter filterText">
         </div>
         <h3 class="item itemFilter">Fishes</h3>
-        <div class="hide filter filterText">This is my first accordion paragraph text that I will show and hide using
-          vanilla JavaScript.
+        <div class="hide filter filterText">
         </div>
 
       </div>
@@ -89,108 +80,50 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="ui vertical borderless  text menu MainMenu">
-        <a class="active item ">All pets</a>
-        <a class="item ">Cats</a>
-        <p class="hide">This is my first accordion paragraph text that I will show and hide using vanilla JavaScript.
-        </p>
-        <a class="item ">Dogs</a>
-        <p class="hide">This is my first accordion paragraph text that I will show and hide using vanilla JavaScript.
-        </p>
-        <a class="item ">Birds</a>
-        <p class="hide">This is my first accordion paragraph text that I will show and hide using vanilla JavaScript.
-        </p>
-        <a class="item ">Fishes</a>
-        <p class="hide">This is my first accordion paragraph text that I will show and hide using vanilla JavaScript.
-        </p>
-      </div> -->
     </div>
     <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer right floated column" id="content">
       <div class="ui padded grid">
         <div class="row">
+          <div class="fifteen wide table float column">
+            <div class="ui message">
+              <h1 class="ui huge header">We are the Best Pet Store!</h1>
+              <p class="lead">
+                This is a simple example to show the off-canvas layout pattern
+                in Semantic-UI, click the green button to see off-canvas left
+                sidebar coming in and out of the page, and try to change the
+                viewport size to see right sidebar toggle button. You could
+                check out more wonderful effects here.<br>
 
-          <div class="ui message">
-            <h1 class="ui huge header">We are the Best Pet Store!</h1>
-            <p class="lead">
-              This is a simple example to show the off-canvas layout pattern
-              in Semantic-UI, click the green button to see off-canvas left
-              sidebar coming in and out of the page, and try to change the
-              viewport size to see right sidebar toggle button. You could
-              check out more wonderful effects here.<br>
-
-            </p>
-            <div class="qualityAword"><a target="_blank" href="#">Award Best Pet Shop of the Year! <img
-                  class=" qualityImg" src="img/quality.png">
-              </a></div>
-          </div>
-          <div class=" InfoCart">
-
-          </div>
-
-          <div class="ui modal  cartInf">
-
-          </div>
-
-          <div class="ui grid">
-            <div class="row">
-              <h1 class="ui huge dividing header">All pets. </h1>
-            </div>
-            <div class="three column row  productList">
-              <div class="column ">
-                <div class="productList">
-
-                </div>
+              </p>
+              <div class="qualityAword"><a target="_blank" href="#">Award Best Pet Shop of the Year! <img
+                    class=" qualityImg" src="img/quality.png">
+                </a>
               </div>
             </div>
           </div>
-          <footer>&copy; Happy Pet loves you</footer>
         </div>
+      </div>
+      <div class="ui modal  cartInf">
+
+      </div>
+
+      <div class="ui grid">
+        <div class="three column row  productList">
+
+        </div>
+        <footer>&copy; Happy Pet loves you</footer>
       </div>
     </div>
   </div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-  <script>
-
-
-    $('.tabular.menu .item').tab();
-    $(function () {
-      $(`#cartOrder`).click(function () {
-        console.log("click");
-        $(`.cartInf`).modal('show');
-      });
-      $(`.cartInf`).modal({
-        closable: true
-      });
-    });
-    $('.ui.dropdown')
-      .dropdown()
-      ;
-    $('.menu .item').tab();
-    $(document).ready(function () {
-      $('.demo.menu .item').tab();
-    });
-    $(document).ready(function () {
-
-      $(".ui.toggle.button").click(function () {
-        $(".mobile.only.grid .ui.vertical.menu").toggle(100);
-      });
-
-      // toggle right sidebar
-      $(".ui.sidebar")
-        .sidebar({
-          context: $(".pushable"),
-          animation: "slide along",
-          dimPage: false
-        })
-        .sidebar("attach events", ".ui.top.attached.blue.button");
-    });
-  </script>
-  <script type="module" src="app/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+    </script>
+      <script src="style/semantic/semantic.min.js"></script>
   <script src="main.js"></script>
+  <script type="module" src="app/main.js"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 import {modelSearch} from './ModelSearch.js'
 import {viewSearch} from './ViewSearch.js'
-import {Template} from './Template.js'
+
 
 
 export class controllerSearch {

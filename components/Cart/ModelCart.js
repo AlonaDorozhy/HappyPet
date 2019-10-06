@@ -11,7 +11,6 @@ export default class modelCart {
   }
 
 
-
   getIchBtn(data) {
     data.forEach(pets => {
       this.btnItch = document.getElementById(pets.id);
@@ -45,8 +44,7 @@ export default class modelCart {
 
   }
 }
-
-export class AnimalFactory {
+ class AnimalFactory {
   createData(array) {
 
     let data = array.map(el => {
@@ -140,5 +138,3 @@ class Cat extends Animal {
     this.short_sightedness = obj.short_sightedness;
   }
 }
-
-

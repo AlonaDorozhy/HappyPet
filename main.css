@@ -1,5 +1,6 @@
 .ui .message {
   background: white url(img/main.jpg);
+  /* background-size: 100px 200px; */
   background-repeat: no-repeat;
   background-position: right top;
   padding-top: 10px!important;
@@ -71,7 +72,7 @@ a {
 
 #sidebar {
   width: 15% !important;
-  position: fixed;
+  position: absolute !important;
   height: 100vh;
   background-color: #f5f5f5;
   padding-top: 68px;
@@ -248,7 +249,6 @@ footer {
   position: relative;
   display: flex;
   float: right;
-
 }
 
 .ui.labeled.icon.button {
@@ -367,6 +367,46 @@ i.icon.search:before {
   padding: 0;
   margin: 0;
   color: rgb(10, 48, 48) !important;
+}
+
+.filterHead {
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 5px, 0, 5px, 0;
+}
+
+.checkInput {
+  width: 18px !important;
+  height: 18px !important;
+  line-height: 1;
+}
+
+.inputMin {
+  width: 80px !important;
+  height: 30px !important;
+  float: left;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(10, 48, 48);
+}
+
+.inputMax {
+  width: 80px !important;
+  height: 30px !important;
+  float: right;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(10, 48, 48);
+}
+
+.checkLabel {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 3px 15px 0 0;
+  text-transform: capitalize;
+  align-self: top;
 }
 
 /* ggggggggggggggggggggggggggggggggggggggggggggg */

@@ -1,11 +1,13 @@
 import viewCart from './ViewCart.js';
 import modelCart from './ModelCart.js';
+import AnimalFactory from './ModelCart.js';
 
 export  class controllerCart {
   constructor(storage) {
     this.storage = storage;
     this.model = new modelCart(this);
     this.view = new viewCart(this);
+    this.animal = new AnimalFactory(this);
     this.buildCart();
 
   }
