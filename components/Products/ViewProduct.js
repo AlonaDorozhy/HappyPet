@@ -4,22 +4,21 @@ export class viewProduct {
     this.storage = this.controller.storage;
     this.productListDOM = document.querySelector('.productList');
 
+
+    this.productListDOM.innerHTML = "";
   }
 
   buildProductList(prodArr) {
     this.productListDOM.innerHTML = "";
- 
     prodArr.forEach(pets => {
-     
-      $(function () {
+   $(function () {
         $(`#item${pets.id}`).click(function () {
-          $(`.item${pets.id}`).modal('show');
-        });
+          $(`.item${pets.id}`).modal('show');});
         $(`.item${pets.id}`).modal({
           closable: true
         });
       });
-     
+   
       this.productListDOM.innerHTML += `
   <div class="column">
     <div class="ui special card">
@@ -48,7 +47,6 @@ export class viewProduct {
           <i class="expand arrows alternate icon">
           </i>More</button>
         <div class="ui modal item${pets.id}">
-          <i class="close icon"></i>
           <div class="header  detProdTypeHead ">
             ${pets.type}: ${pets.name}
           </div>
@@ -77,17 +75,9 @@ export class viewProduct {
               </div>
             </div>
           </div>
-          <div class="actions">
-            <div class="ui black deny button">
-              Back
-            </div>
-            <div name="${ pets.id}" id="${pets.id}innerBtn" class="ui positive right labeled icon button btnAdd">
-              Add to cart
-              <i class="checkmark icon"></i>
-            </div>
-          </div>
+          
         </div>
-        <div name="${ pets.id}" id="${pets.id}" class="ui btnAdd button">
+        <div id="${pets.id}"  class="ui btnAdd button">
           <i class="cart arrow down icon"></i> 
           Add to cart
         </div>

@@ -9,9 +9,17 @@ export default class viewCart {
       this.CartClick.addEventListener('click', () => this.buildOrderCart());
       this.storage = this.controller.storage;
       this.cartArr = []
-      // this.ProdCartDOM = document.querySelector('div.segmentFirst');
+
       this.allCartProd = []
 
+   }
+
+
+
+
+   btnProduct(data, current) {
+      this.controller.buildProductCart(data, current);
+      this.controller.buildOrderCart(data, current)
    }
 
    buildProductCart(data, current) {
@@ -21,10 +29,10 @@ export default class viewCart {
             this.cartArr.push(el);
          }
       });
-      //  <div class="content" style="padding: 1rem;">
+ 
       this.cartArr.forEach(el => {
          this.ProdCartDOM = document.querySelector('div.segmentFirst');
-         console.log(el);
+      
          this.first = `
    
   <div class="ui card" style="max-width: 100%; min-width: 100%;">
@@ -67,10 +75,11 @@ export default class viewCart {
    }
 
    buildOrderCart(prodArr) {
+     
       $(document).ready(function () {
          $('.demo.menu .item').tab({ history: false });
       });
-      // console.log(this.first);   
+    
 
       this.OrderCartDOM.innerHTML = ''
       this.OrderCartDOM.innerHTML += `

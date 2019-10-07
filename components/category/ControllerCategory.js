@@ -7,30 +7,22 @@ export class controllerCategory {
     this.storage = storage;
     this.model = new modelCategory(this);
     this.view = new viewCategory(this);
-    this.beginCategorySorting();
-    console.log(this.view.checkCategory());
   }
 
-
-  // buildProductList(prodArr) {
-  //   this.view.buildProductList(prodArr);
-  // }
-
-
-  beginCategorySorting() {
-    console.log(this.view.checkCategory());
-    console.log(this.view.getSearchValue);
-    this.active =  this.view.checkCategory()
-      this.model.beginCategorySorting(this.active);
-  
+  checkCategory() {
+    this.model.beginCategorySorting(this.active);
+    this.view.checkCategory()
+  }
+  getItchBtn(data){
+    this.storage.cart.getItchBtn(data) 
+  }
  
+  buildProductList(prodArr) {
+   
+
+  
+    this.storage.product.buildProductList(prodArr);
   }
-
-  // buildProductList(prodArr) {
-  //   this.storage.product.buildProductList(prodArr);
-  // }
-
-
 
 }
 

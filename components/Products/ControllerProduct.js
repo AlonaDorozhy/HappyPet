@@ -1,5 +1,5 @@
-import {modelProduct} from './ModelProduct.js'
-import {viewProduct} from './ViewProduct.js'
+import { modelProduct } from './ModelProduct.js'
+import { viewProduct } from './ViewProduct.js'
 // import {Template} from './Template.js'
 
 class controllerProduct {
@@ -7,16 +7,17 @@ class controllerProduct {
     this.storage = storage;
     this.model = new modelProduct(this);
     this.view = new viewProduct(this);
-    // this.Template = new Template(this);
+ 
     this.buildAllProducts();
   }
 
 
   buildAllProducts() {
-    this.model.getAllProducts().then((dd) => {
-      this.storage.arrAllProds = dd;
-      this.buildProductList(dd);
-    });
+    this.prod = this.model.getAllProducts()
+    this.storage.arrAllProds = this.prod
+    this.storage.arrAllProds = this.prod
+  
+    this.buildProductList(this.prod);
   }
 
   buildProductList(prodArr) {

@@ -5,7 +5,9 @@ export  class modelProduct {
   }
 
   getAllProducts() {
-    return fetch('../../../data/products2.json').then((d) => d.json());
+    this.arr = JSON.parse(window.localStorage.getItem('data'));
+    let prodArr = this.arr.slice();
+    return prodArr
   }
 
 

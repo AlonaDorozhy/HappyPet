@@ -6,25 +6,28 @@ export default class modelCart {
     this.animalFactory = new AnimalFactory();
     this.btn = []
     this.btnItch
-
+    this.text = document.getElementsByClassName('ui special card')
+let data
+    this.text.onchange = this.getIchBtn
 
   }
 
 
-  getIchBtn(data) {
+ getIchBtn(data) {
     data.forEach(pets => {
-      this.btnItch = document.getElementById(pets.id);
-
+      this.pet = pets.id
+      this.btnItch = document.getElementById(`${pets.id}`);
       this.btnItch.addEventListener('click', () => this.btnProduct(data, pets.id))
     });
+
+  }
+  filterCartItems(){
 
   }
 
   btnProduct(data, current) {
     this.controller.buildProductCart(data, current);
     this.controller.buildOrderCart(data, current)
-    console.log(current);
-
   }
 
   getAnimals() {
@@ -35,10 +38,10 @@ export default class modelCart {
 
       })
       .then((json) => {
+
         this.data = this.animalFactory.createData(json);
-        localStorage.setItem("data", JSON.stringify(this.data));
+        localStorage.setItem("data", JSON.stringify(json));
         this.data = json;
-        this.getIchBtn(this.data)
         return this.data;
       });
 

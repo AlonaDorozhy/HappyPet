@@ -22,7 +22,7 @@ buildCart() {
 }
   
   getItchBtn(data) {
-    
+    this.model.getIchBtn(data)
   }
 
   BtnInfo(prodArr) {

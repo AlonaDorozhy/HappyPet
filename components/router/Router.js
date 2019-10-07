@@ -9,13 +9,14 @@ export class routerController {
 
     this.product = new controllerProduct(this);
     this.search = new controllerSearch(this);
-    this.cart = new controllerCart(this);
+    this.category = new controllerCategory(this); 
+       this.cart = new controllerCart(this);
     this.sorting = new controllerSorting(this);
-    this.category = new controllerCategory(this);
+
     this.filter = new controllerFilter(this)
 
     return this;
-  
+    
 }
 
 }

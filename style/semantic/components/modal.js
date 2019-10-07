@@ -1,12 +1,3 @@
-/*!
- * # Semantic UI 2.4.1 - Modal
- * http://github.com/semantic-org/semantic-ui/
- *
- *
- * Released under the MIT license
- * http://opensource.org/licenses/MIT
- *
- */
 
 ;(function ($, window, document, undefined) {
 
