@@ -2,7 +2,7 @@ import { modelSorting } from './ModelSorting.js';
 import { viewSorting } from './ViewSorting.js';
 
 
-export class controllerSorting{
+export class controllerSorting {
   constructor(storage) {
 
     this.storage = storage;

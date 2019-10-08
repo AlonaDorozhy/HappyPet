@@ -7,6 +7,11 @@ export class controllerCategory {
     this.storage = storage;
     this.model = new modelCategory(this);
     this.view = new viewCategory(this);
+    this.addListener();
+  }
+
+  addListener(){
+    this.view.addListener(this.checkCategory);
   }
 
   checkCategory() {
@@ -18,9 +23,6 @@ export class controllerCategory {
   }
  
   buildProductList(prodArr) {
-   
-
-  
     this.storage.product.buildProductList(prodArr);
   }
 

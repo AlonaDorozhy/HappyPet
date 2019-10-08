@@ -11,14 +11,15 @@ export class viewProduct {
   buildProductList(prodArr) {
     this.productListDOM.innerHTML = "";
     prodArr.forEach(pets => {
-   $(function () {
+      $(function () {
         $(`#item${pets.id}`).click(function () {
-          $(`.item${pets.id}`).modal('show');});
+          $(`.item${pets.id}`).modal('show');
+        });
         $(`.item${pets.id}`).modal({
           closable: true
         });
       });
-   
+     
       this.productListDOM.innerHTML += `
   <div class="column">
     <div class="ui special card">
@@ -82,9 +83,53 @@ export class viewProduct {
           Add to cart
         </div>
       </div>
-    </div>
- `
+
+
+
+ ` 
+ 
     });
 
+    // this.callModal()
   }
-}
+
+
+
+//       <button id="modal-btn"> click me, I make a modal</button>
+// <div class="modalka">
+//   <div class="modal-header">
+//     <span class="close-btn">&times;</span>
+//     <h1>I am the Header</h1>
+//   </div>
+//   <div class="modal-content">
+//     <p>this is the text inside the modal</p>
+//   </div>
+//   <div class="modal-footer">
+//     <h2>I am the Footer</h2>
+//   </div>
+// </div>
+//     </div>
+//   callModal() {
+//     this.modalBtn = document.getElementById("modal-btn")
+//     this.modal = document.querySelector(".modalka")
+//     this.closeBtn = document.querySelector(".close-btn")
+
+//     this.modalBtn.addEventListener('click', () => {
+//       console.log(1);
+//       console.log(this.modal.style.display);
+//       this.modal.style.display = "block"
+//     })
+
+
+//     this.closeBtn.addEventListener('click', () => {
+//       console.log(2);
+//       this.modal.style.display = "none"
+//     })
+//     window.onclick = function (e) {
+//       console.log(3);
+//       if (e.target == this.modal) {
+//         this.modal.style.display = "none"
+//       }
+//     }
+//   }
+// }

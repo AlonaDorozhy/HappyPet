@@ -7,16 +7,14 @@ class controllerProduct {
     this.storage = storage;
     this.model = new modelProduct(this);
     this.view = new viewProduct(this);
- 
     this.buildAllProducts();
   }
 
 
   buildAllProducts() {
+    this.data = this.model.setAllProducts()
     this.prod = this.model.getAllProducts()
-    this.storage.arrAllProds = this.prod
-    this.storage.arrAllProds = this.prod
-  
+    this.storage.arrAllProds = this.data
     this.buildProductList(this.prod);
   }
 

@@ -7,7 +7,7 @@ export class modelFilter {
   
 
   beginFilterSorting() {
-    console.log("fuuuu");
+
     const name = this.controller.createFilter();
     console.log(name);
 

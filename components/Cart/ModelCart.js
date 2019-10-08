@@ -14,6 +14,7 @@ let data
 
 
  getIchBtn(data) {
+   console.log(1);
     data.forEach(pets => {
       this.pet = pets.id
       this.btnItch = document.getElementById(`${pets.id}`);
@@ -31,14 +32,12 @@ let data
   }
 
   getAnimals() {
-
-    return fetch('../../../data/products2.json')
+    return fetch('../../data/products.json')
       .then((d) => {
         return d.json()
 
       })
       .then((json) => {
-
         this.data = this.animalFactory.createData(json);
         localStorage.setItem("data", JSON.stringify(json));
         this.data = json;
@@ -49,9 +48,7 @@ let data
 }
  class AnimalFactory {
   createData(array) {
-
     let data = array.map(el => {
-
       if (el.type === "cat") {
         localStorage.setItem("cat", JSON.stringify(el));
       }
@@ -64,7 +61,6 @@ let data
       if (el.type === "fish") {
         localStorage.setItem("fish", JSON.stringify(el));
       }
-
       return el = this.createObj(el.type, el)
     });
     return data;
@@ -104,20 +100,20 @@ class Animal {
 class Bird extends Animal {
   constructor(obj) {
     super(obj);
-    this.isFly = obj.isFly;
-    this.isSpeak = obj.isSpeak;
-    this.isSing = obj.isSing;
+    this.flying = obj.flying;
+    this.talking = obj.talking;
+    this.singing = obj.singing;
   }
+ 
 }
 
 class Fish extends Animal {
   constructor(obj) {
     super(obj);
-    this.isFreshWater = obj.isFreshWater;
-    this.deepLevel = obj.deepLevel;
+    this.freshwater = obj.freshwater;
+    this.zonality = obj.zonality;
   }
 }
-
 
 
 class Dog extends Animal {
@@ -126,18 +122,18 @@ class Dog extends Animal {
     this.specialization = obj.specialization;
     this.fur = obj.fur;
     this.pedigree = obj.pedigree;
-    this.cupping = obj.cupping;
-    this.short_sightedness = obj.short_sightedness;
+    this.trimming = obj.trimming;
+    this.shortLegged = obj.shortLegged;
   }
 }
 
 class Cat extends Animal {
   constructor(obj) {
     super(obj);
-    this.isFold = obj.isFold;
+    this.lopiness = obj.lopiness;
     this.fur = obj.fur;
     this.pedigree = obj.pedigree;
-    this.cupping = obj.cupping;
-    this.short_sightedness = obj.short_sightedness;
+    this.trimming = obj.trimming;
+    this.shortLegged = obj.shortLegged;
   }
 }

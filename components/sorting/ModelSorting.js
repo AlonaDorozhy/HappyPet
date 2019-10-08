@@ -9,6 +9,7 @@ export class modelSorting {
   beginSortingProcess() {
     const name = this.controller.getSearchValue();
     let prodArr = this.storage.arrAllProds.slice();
+    // let prodArr = this.storage.arrAllProds
 
 
     if (name === "Price") {

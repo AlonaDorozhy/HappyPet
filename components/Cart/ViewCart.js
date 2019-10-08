@@ -9,12 +9,9 @@ export default class viewCart {
       this.CartClick.addEventListener('click', () => this.buildOrderCart());
       this.storage = this.controller.storage;
       this.cartArr = []
-
       this.allCartProd = []
 
    }
-
-
 
 
    btnProduct(data, current) {
@@ -25,7 +22,7 @@ export default class viewCart {
    buildProductCart(data, current) {
       data.forEach(el => {
          if (el.id === current) {
-            console.log(el);
+         
             this.cartArr.push(el);
          }
       });
