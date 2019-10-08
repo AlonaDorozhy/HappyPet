@@ -93,7 +93,7 @@ export class viewProduct {
     // this.callModal()
   }
 
-
+}
 
 //       <button id="modal-btn"> click me, I make a modal</button>
 // <div class="modalka">
