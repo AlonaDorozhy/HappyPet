@@ -2,7 +2,7 @@
   {
     "id": 1,
     "type": "cat",
-    "url": "./data/img/pets/cats/siamskaya.jpg",
+    "url": "./data/img/pets/cats/siamskaya.jpg  ",
     "name": "Siamese",
     "price": 100,
     "quantity": 2,
@@ -24,7 +24,7 @@
   {
     "id": 2,
     "type": "cat",
-    "url": "./data/img/pets/cats/balines.jpg",
+    "url": "./data/img/pets/cats/balines.jpg ",
     "name": "Balinese",
     "price": 150,
     "quantity": 1,

@@ -1,4 +1,4 @@
-export default class modelCart {
+export   class ModelCart {
   constructor(controller) {
     this.controller = controller;
     this.data = [];
@@ -7,7 +7,7 @@ export default class modelCart {
     this.btn = []
     this.btnItch
     this.text = document.getElementsByClassName('ui special card')
-let data
+
     this.text.onchange = this.getIchBtn
 
   }
@@ -46,7 +46,7 @@ let data
 
   }
 }
- class AnimalFactory {
+export class AnimalFactory {
   createData(array) {
     let data = array.map(el => {
       if (el.type === "cat") {

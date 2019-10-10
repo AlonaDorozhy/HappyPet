@@ -1,4 +1,4 @@
-export default class viewCart {
+export class ViewCart {
    constructor(contr) {
       this.controller = contr;
       this.storage = this.controller.storage;
@@ -18,18 +18,17 @@ export default class viewCart {
       this.controller.buildProductCart(data, current);
       this.controller.buildOrderCart(data, current)
    }
-
    buildProductCart(data, current) {
       data.forEach(el => {
          if (el.id === current) {
-         
+
             this.cartArr.push(el);
          }
       });
- 
+
       this.cartArr.forEach(el => {
          this.ProdCartDOM = document.querySelector('div.segmentFirst');
-      
+
          this.first = `
    
   <div class="ui card" style="max-width: 100%; min-width: 100%;">
@@ -68,15 +67,16 @@ export default class viewCart {
       });
       this.allCartProd.push(this.first)
 
-
    }
 
-   buildOrderCart(prodArr) {
-     
+   buildOrderCart() {
+
+      // eslint-disable-next-line no-undef
       $(document).ready(function () {
+         // eslint-disable-next-line no-undef
          $('.demo.menu .item').tab({ history: false });
       });
-    
+
 
       this.OrderCartDOM.innerHTML = ''
       this.OrderCartDOM.innerHTML += `
