@@ -6,12 +6,12 @@ import InitialView from './InitialView.js';
     this.observer = observer;
     this.model = new InitialModel();
     this.view = new InitialView();
-    this.model.loadGoodsFromJSON(this.showAllGoods.bind(this));
+    this.model.getJSONData(this.createInitialPage.bind(this));
  
   }
 
-  showAllGoods(data) {
-    this.model.setActiveCase(data);
+  createInitialPage(data) {
+    this.model.storeRelevant(data);
     this.view.render(data);
   }
 }

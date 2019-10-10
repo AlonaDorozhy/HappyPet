@@ -12,18 +12,18 @@ export  class modelProduct {
   }
 
 
-  setAllProducts() {
-    return fetch('../../data/products.json')
-      .then((d) => {
-        return d.json()
+  // setAllProducts() {
+  //   return fetch('../../data/products.json')
+  //     .then((d) => {
+  //       return d.json()
 
-      })
-      .then((json) => {
-        localStorage.setItem("data", JSON.stringify(json));
-        this.data = json;
-        return this.data;
-      });
+  //     })
+  //     .then((json) => {
+  //       localStorage.setItem("data", JSON.stringify(json));
+  //       this.data = json;
+  //       return this.data;
+  //     });
 
-  }
+  // }
  
 }

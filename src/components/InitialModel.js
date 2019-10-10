@@ -1,18 +1,16 @@
 export default class InitialModel {
-    loadGoodsFromJSON(showAllGoods) {
-      fetch('../../data/products.json')
-        .then(res => res.json())
-        .then(out => {
-          this.addGoodsInLocalStorage(out);
-          showAllGoods(out);
-        });
-    }
-  
-    addGoodsInLocalStorage(out) {
-      localStorage.setItem('goods', JSON.stringify(out));
-    }
-  
-    setActiveCase(data) {
-      localStorage.setItem('actualGoods', JSON.stringify(data));
-    }
+  getJSONData(createInitialPage) {
+    fetch('../../data/products.json')
+      .then(res => res.json())
+      .then(data => {
+        localStorage.setItem("data", JSON.stringify(data));
+        createInitialPage(data);
+        console.log(data);
+      })
+
   }
+
+  storeRelevant(data) {
+    localStorage.setItem('relevant', JSON.stringify(data));
+  }
+}

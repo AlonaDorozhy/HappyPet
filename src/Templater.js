@@ -1,57 +1,52 @@
 export default class Templater {
  
-    constructor(link) {
+    constructor(pass) {
       this.elements = [];
-      this.isCatch = false;
-      this.isLoad = false;
- 
-      fetch('../src/components/InitialTemplate.html')
-      
+      this.catch = false;
+      this.loading = false;
+      fetch(pass)
         .then(response => response.text())
         .then(result => {
           this.template = result;
-          this.isLoad = true;
-          this.isCatch ? this.render() : null;
+          this.loading = true;
+          this.catch ? this.render() : null;
         });
     }
   
-    load(objProduct, domNode, selector, event, fn) {
-      if (this.isLoad) {
-        this.show(objProduct, domNode, selector, event, fn);
+    load(allProducts, domNode, selector, event, fun) {
+      if (this.loading) {
+    
+        this.show(allProducts, domNode, selector, event, fun);
       } else {
-        this.isCatch = true;
+        this.catch = true;
         this.elements.push({
-          objProduct,
-          domNode,
-          selector,
-          event,
-          fn
+          allProducts, domNode,selector, event, fun
         });
       }
     }
   
     render() {
-      this.elements.forEach(({ objProduct, domNode, selector, event, fn }) => {
-        this.show(objProduct, domNode, selector, event, fn);
+      this.elements.forEach(({ allProducts, domNode, selector, event, fun }) => {
+        this.show(allProducts, domNode, selector, event, fun);
       });
     }
   
-    show(objProduct, domNode, selector, event, fn) {
+    show(allProducts, domNode, selector, event, fun) {
       const node = domNode;
       let stringHTML = this.template;
-      for (const key in objProduct) {
-        const regexp = new RegExp(`{{ ${key} }}`, 'gi');
-        stringHTML = stringHTML.replace(regexp, objProduct[key]);
+      for (const key in allProducts) {
+        const regexp = new RegExp(`{{ ${key} }}`);
+        stringHTML = stringHTML.replace(regexp, allProducts[key]);
       }
       node.innerHTML += stringHTML;
-      this.addHandlers(selector, event, fn);
+      this.addHandlers(selector, event, fun);
     }
   
-    addHandlers(selectors = [], event, fn) {
+    addHandlers(selectors = [], event, fun) {
       if (selectors.length) {
         selectors.forEach(elem => {
           const node = document.querySelector(elem);
-          node.addEventListener(event, fn);
+          node.addEventListener(event, fun);
         });
       }
     }

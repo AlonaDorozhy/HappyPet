@@ -8,14 +8,14 @@ import { Observer } from './components/observer.js';
 import InitialController from './components/InitialController.js';
 export default class routerController {
     constructor() {
-
-        // this.product = new controllerProduct(this);
+        this.initial = new InitialController(this.observer)
+        this.product = new controllerProduct((this.observer));
         // this.search = new controllerSearch(this);
         // this.category = new controllerCategory(this);
         // this.cart = new controllerCart(this);
         // this.sorting = new controllerSorting(this);
         // this.filter = new controllerFilter(this);
-        this.initial = new InitialController(this.observer)
+       
         this.observer = new Observer();
         return this;
 

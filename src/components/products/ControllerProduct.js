@@ -3,13 +3,14 @@ import { viewProduct } from './ViewProduct.js'
 // import {Template} from './Template.js'
 
 class controllerProduct {
-  constructor(storage) {
-    this.storage = storage;
+  constructor(observer) {
+    console.log(observer);
+    this.observer = observer;
     this.model = new modelProduct(this);
     this.view = new viewProduct(this);
     this.buildAllProducts();
   }
-
+ 
 
   buildAllProducts() {
     this.data = this.model.setAllProducts()
