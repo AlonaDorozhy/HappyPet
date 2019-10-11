@@ -10,12 +10,6 @@ export class ViewProduct {
   findDomPlace(products) {
 
    window.addEventListener('DOMContentLoaded', () => this.getProdList()
-      // this.products = document.querySelector('.productList');
-      // this.place = this.products ;
-      // console.log(this.place, products)
-      // this. buildProductList(this.place, products)
-    
-      // return this.place
     )
     window.addEventListener('load', () => {
       this.products = document.querySelector('.productList');
