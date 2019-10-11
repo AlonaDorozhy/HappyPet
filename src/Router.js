@@ -1,4 +1,4 @@
-import { controllerProduct } from './components/products/ControllerProduct.js';
+import { ControllerProduct } from './components/products/ControllerProduct.js';
 import { controllerSearch } from './components/search/ControllerSearch.js';
 import { controllerCart } from './components/cart/ControllerCart.js';
 import { controllerSorting } from './components/sorting/ControllerSorting.js';
@@ -9,7 +9,7 @@ import InitialController from './components/InitialController.js';
 export default class routerController {
     constructor() {
         this.initial = new InitialController(this.observer)
-        this.product = new controllerProduct((this.observer));
+        this.product = new ControllerProduct((this.observer));
         // this.search = new controllerSearch(this);
         // this.category = new controllerCategory(this);
         // this.cart = new controllerCart(this);

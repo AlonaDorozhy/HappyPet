@@ -1,28 +1,30 @@
-import { modelProduct } from './ModelProduct.js'
-import { viewProduct } from './ViewProduct.js'
-// import {Template} from './Template.js'
+import { ModelProduct } from './ModelProduct.js'
+import { ViewProduct } from './ViewProduct.js'
 
-class controllerProduct {
+
+export class ControllerProduct {
   constructor(observer) {
-    console.log(observer);
     this.observer = observer;
-    this.model = new modelProduct(this);
-    this.view = new viewProduct(this);
+    this.model = new ModelProduct(this);
+    this.view = new ViewProduct(this); 
+
     this.buildAllProducts();
-  }
  
+  }
 
   buildAllProducts() {
-    this.data = this.model.setAllProducts()
-    this.prod = this.model.getAllProducts()
-    this.storage.arrAllProds = this.data
-    this.buildProductList(this.prod);
+ 
+    this.products = this.model.getAllProducts()
+    this.findDomPlace(this.products);
+    // this.buildProductList(this.prod);
+  
   }
-
-  buildProductList(prodArr) {
-    this.view.buildProductList(prodArr);
+  findDomPlace(prodArr){
+    this.view.findDomPlace(prodArr)
   }
+  // buildProductList(prodArr) {
+  //   this.view.buildProductList(prodArr);
+  // }
 
 }
 
-export { controllerProduct }

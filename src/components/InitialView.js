@@ -9,22 +9,10 @@ export default class InitialView {
     render(data) {
         const main = document.querySelector('#root');
         main.innerHTML = '';
-        console.log(data);
         this.templater.load(data, main);
-        // data.forEach(elem => {
-        
-        //     this.templater.load(elem, main);
-        // });
+       
     }
 
-    // render(data) {
-    //     const main = document.querySelector('#root');
-    //     main.innerHTML = '';
-    //     data.forEach(elem => {
-    //         console.log(elem);
-    //         console.log(main);
-    //         this.templater.load(elem, main);
-    //     });
-    // }
+  
 }
 

@@ -11,7 +11,6 @@ import InitialView from './InitialView.js';
   }
 
   createInitialPage(data) {
-    this.model.storeRelevant(data);
     this.view.render(data);
   }
 }

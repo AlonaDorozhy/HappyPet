@@ -1,26 +1,28 @@
 export  class Observer {
-    constructor() {
-      this.events = {};
+  constructor() {
+    this.events = {};
+  }
+
+  subscribe(eventName, func) {
+ 
+    if (!this.events[eventName]) {
+      this.events[eventName] = [];
     }
+    this.events[eventName].push(func);
+  }
+
+  emit(eventName, data) {
   
-    subscribe(eventName, func) {
-      if (!this.events[eventName]) {
-        this.events[eventName] = [];
-      }
-      this.events[eventName].push(func);
-    }
-  
-    emit(eventName, data) {
-      if (this.events[eventName]) {
-        this.events[eventName].forEach(fn => {
-          fn(data);
-        });
-      }
-    }
-  
-    unsubscribe(eventName, fn) {
-      this.events[eventName] = this.events[eventName].filter(
-        eventFn => fn !== eventFn
-      );
+    if (this.events[eventName]) {
+      this.events[eventName].forEach(func => {
+        func(data);
+      });
     }
   }
+
+  unsubscribe(eventName, func) {
+    this.events[eventName] = this.events[eventName].filter(
+      eventFn => func !== eventFn
+    );
+  }
+}
