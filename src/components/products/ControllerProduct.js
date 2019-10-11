@@ -14,17 +14,15 @@ export class ControllerProduct {
 
   buildAllProducts() {
  
-    this.products = this.model.getAllProducts()
+    this.products = this.model.getAllProducts();
     this.findDomPlace(this.products);
-    // this.buildProductList(this.prod);
+   
   
   }
   findDomPlace(prodArr){
-    this.view.findDomPlace(prodArr)
+    this.view.findDomPlace(prodArr);
   }
-  // buildProductList(prodArr) {
-  //   this.view.buildProductList(prodArr);
-  // }
+
 
 }
 
