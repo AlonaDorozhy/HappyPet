@@ -7,7 +7,8 @@ import { controllerFilter } from './components/filter/ControllerFilter.js';
 import { Observer } from './components/observer.js';
 import InitialController from './components/InitialController.js';
 export default class routerController {
-    constructor() {
+    constructor() {  
+        this.observer = new Observer();
         this.initial = new InitialController(this.observer)
         this.product = new ControllerProduct((this.observer));
         // this.search = new controllerSearch(this);
@@ -16,7 +17,7 @@ export default class routerController {
         // this.sorting = new controllerSorting(this);
         // this.filter = new controllerFilter(this);
        
-        this.observer = new Observer();
+      
         return this;
 
     }
